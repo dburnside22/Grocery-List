@@ -1,0 +1,47 @@
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  grid-template-rows: minmax(10px, auto);
+}
+
+body{
+  background-color: #66B9BF;
+
+}
+
+h1{
+  display: inline-block;
+  text-align: center;
+  grid-column: 1 / 7;
+  grid-row: 1;
+  font-size: 70px;
+}
+
+.task-container {
+  grid-column: 2 / 3;
+  grid-row: 2;
+  background: #DCD0C0;
+  padding-bottom: 45%;
+  box-shadow: 2px 2px black;
+}
+
+.current-task-title {
+  text-align: center;
+  border-bottom: 1px solid black;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  padding: 7px 0 0 7px;
+  font-size: 35px;
+  background-color: #E37222;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.the-task {
+  font-size: 20px;
+  padding: 6px 0px 6px 45px;
+  border-bottom: 1px solid gray;
+}
