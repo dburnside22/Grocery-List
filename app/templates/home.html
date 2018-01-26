@@ -4,11 +4,13 @@
   <div class="task-container">
     <div class="taskList">
       <h3 class="current-task-title">Current Task</h3>
-      <div class= "the-task" ng-repeat="task in home.tasks">
-        <label>
-          <input type="checkbox" />
-          {{task.$value}}
-        </label>
+      <div class= "the-task" ng-repeat="task in home.activeTask">
+        <div ng-hide="home.hideTask(task)">
+          <label ng-click="home.task.completeTask(task)">
+            <input type="checkbox" ng-model="thisTask" />
+            {{task.name}}
+          </label>
+        </div>
       </div>
     </div>
   </div>
