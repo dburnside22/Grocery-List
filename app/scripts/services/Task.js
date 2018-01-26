@@ -12,19 +12,32 @@
 
     Task.completedTask = completedTask;
 
+    Task.timedOut = timedOut;
+
     Task.completeTask = function(task){
       firebase.database().ref("activeTask/" + task.$id).update({
         complete :true
       });
     }
 
+    Task.uncompleteTask = function(task){
+      firebase.database().ref("completedTask/" + task.$id).update({
+        complete :false
+      });
+    }
+
     Task.moveTask = function(task, where){
       if (where === "timedOut"){
         timedOut.$add(task);
+        activeTask.$remove(task);
       } else if (where === "completedTask"){
         completedTask.$add(task);
+        activeTask.$remove(task);
+      }else if (where === "activeTask"){
+        activeTask.$add(task);
+        completedTask.$remove(task);
       }
-      activeTask.$remove(task);
+
     }
     return Task;
   }

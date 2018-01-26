@@ -1,0 +1,19 @@
+<div class="grid-wrapper">
+  <h1>To-Do</h1>
+
+  <div class="task-container">
+    <a ui-sref="home">Active Task</a>
+    <a class="expired-link" ui-sref="expiredTask">Expired Task</a>
+    <div class="taskList">
+      <h3 class="current-task-title">Completed Task</h3>
+      <div class= "the-task" ng-repeat="task in completed.task.completedTask">
+        <div ng-hide="completed.activateTask(task)">
+          <label ng-click="completed.task.uncompleteTask(task)">
+            <input type="checkbox" ng-model="task.complete" />
+            {{task.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

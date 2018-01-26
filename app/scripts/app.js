@@ -11,7 +11,17 @@
         url: '/',
         controller: 'HomeCtrl as home',
         templateUrl: '/templates/home.html'
-      });
+      })
+      .state('completedTask', {
+         url: '/completedTask' ,
+         controller: 'CompletedCtrl as completed',
+         templateUrl: '/templates/completedTask.html'
+      })
+      .state('expiredTask', {
+         url: '/expiredTask' ,
+         controller: 'ExpiredCtrl as expired',
+         templateUrl: '/templates/expiredTask.html'
+      });;
   }
 
   angular
