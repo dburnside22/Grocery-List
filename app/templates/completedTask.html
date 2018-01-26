@@ -8,10 +8,12 @@
       <h3 class="current-task-title">Completed Task</h3>
       <div class= "the-task" ng-repeat="task in completed.task.completedTask">
         <div ng-hide="completed.activateTask(task)">
-          <label ng-click="completed.task.uncompleteTask(task)">
-            <input type="checkbox" ng-model="task.complete" />
-            {{task.name}}
-          </label>
+          <div class="completed-task">
+            <label ng-click="completed.task.uncompleteTask(task)">
+              <input type="checkbox" ng-model="task.complete" />
+              {{task.name}}
+            </label>
+          </div>
         </div>
       </div>
     </div>

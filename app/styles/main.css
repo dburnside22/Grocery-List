@@ -44,7 +44,6 @@ a{
   box-shadow: 2px 2px black;
 }
 
-
 .the-task {
   background-color: #f2f2e6;
   font-size: 20px;
@@ -58,4 +57,9 @@ a{
 
 input[type='checkbox']{
   margin-right: 10px;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: gray;
 }
