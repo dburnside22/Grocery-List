@@ -3,6 +3,7 @@
     this.activeTask = Task.activeTask;
     this.task = Task;
 
+
     this.hideTask = function(task){
       var today = new Date();
       var taskDate = new Date(task.createdAt);

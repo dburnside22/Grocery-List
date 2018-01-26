@@ -39,6 +39,16 @@
       }
 
     }
+
+    Task.createNewTask = function(newTaskName, priority){
+      var timestamp = new Date().getTime();
+      activeTask.$add({
+        name :newTaskName,
+        priority :priority,
+        createdAt :timestamp,
+        complete :false
+      });
+    }
     return Task;
   }
 

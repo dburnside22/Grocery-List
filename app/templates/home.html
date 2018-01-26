@@ -9,10 +9,20 @@
         <div ng-hide="home.hideTask(task)">
           <label ng-click="home.task.completeTask(task)">
             <input type="checkbox" ng-model="thisTask" />
-            {{task.name}}
+            {{task.name}} - {{task.priority}}
           </label>
         </div>
       </div>
+      <form class= "new-task-form" ng-submit="home.task.createNewTask(newTaskName, priorityOption)">
+        <input class="new-task-name" ng-model="newTaskName" type="text" placeholder="Enter a New Task"/>
+        <select class="priority-level-selector" ng-model="priorityOption">
+          <option value="" disabled selected>Select priority</option>
+          <option value="High!!!">High!!!</option>
+          <option value="Med!!">Med!!</option>
+          <option value="Low!">Low!</option>
+        </select>
+        <button class="new-task-submit" type="submit">Submit</button>
+      </form>
     </div>
   </div>
 </div>
