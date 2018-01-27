@@ -7,10 +7,10 @@
       <h3 class="current-task-title">Current Task</h3>
       <div class= "the-task" ng-repeat="task in home.activeTask">
         <div ng-hide="home.hideTask(task)">
-          <label ng-click="home.task.completeTask(task)">
-            <input type="checkbox" ng-model="thisTask" />
+          <form ng-click="home.task.completeTask(task)">
+            <input class="the-checkbox" type="checkbox" ng-model="thisTask" />
             {{task.name}} - {{task.priority}}
-          </label>
+          </form>
         </div>
       </div>
       <form class= "new-task-form" ng-submit="home.task.createNewTask(newTaskName, priorityOption)">

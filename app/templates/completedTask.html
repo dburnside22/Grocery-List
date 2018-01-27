@@ -9,10 +9,10 @@
       <div class= "the-task" ng-repeat="task in completed.task.completedTask">
         <div ng-hide="completed.activateTask(task)">
           <div class="completed-task">
-            <label ng-click="completed.task.uncompleteTask(task)">
+            <form ng-click="completed.task.uncompleteTask(task)">
               <input type="checkbox" ng-model="task.complete" />
               {{task.name}}
-            </label>
+            </form>
           </div>
         </div>
       </div>

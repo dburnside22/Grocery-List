@@ -8,11 +8,11 @@
       <h3 class="current-task-title">Expired Task</h3>
       <div class= "the-task" ng-repeat="task in expired.task.timedOut">
         <!-- <div ng-hide="home.hideTask(task)"> -->
-          <label>
+          <form>
              <!-- ng-click="home.task.completeTask(task)"> -->
             <input type="checkbox" ng-model="thisTask" />
             {{task.name}} - was created on: {{task.createdAt}}
-          </label>
+          </form>
         <!-- </div> -->
       </div>
     </div>
