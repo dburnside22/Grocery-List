@@ -1,0 +1,17 @@
+<div class="grid-wrapper">
+  <div class="the-links">
+    <a ui-sref="home">Grocery List</a>
+    <a ui-sref="fridgeList">Fridge</a>
+    <a ui-sref="expiredList">Expired</a>
+  </div>
+
+  <h1>Expired</h1>
+  <div class="list-container">
+      <div class= "the-list" ng-repeat="item in expired.list.expiredList">
+        <div class= "expired-item">
+          {{item.name}}
+          <button class="delete-item-button" ng-click="expired.deleteItem(item)">Delete</button>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="grid-wrapper">
+    <div class="the-links">
+      <a ui-sref="home">Grocery List</a>
+      <a ui-sref="fridgeList">Fridge</a>
+      <a ui-sref="expiredList">Expired</a>
+    </div>
+
+  <h1>Fridge</h1>
+    <div class="list-container">
+      <div class= "the-list" ng-repeat="item in fridge.list.completedList">
+        <div ng-hide="fridge.isItExpired(item)">
+          <div class="fridge-list">
+            {{item.name}} {{item.expires}}
+            <form class= "set-exp-date" ng-show= "item.editButtonClicked" ng-submit="fridge.setExpDate(item, theDate)">
+              <input class="expiration-date" ng-model= "theDate" type="date" />
+              <input type="submit" />
+            </form>
+            <button ng-hide="item.editButtonClicked" ng-click="fridge.beginEdit(item)">Set expiration date</button>
+            <button class="delete-item-button" ng-click="fridge.deleteItem(item)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

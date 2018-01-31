@@ -1,28 +1,26 @@
 <div class="grid-wrapper">
-  <h1>To-Do</h1>
-  <div class="task-container">
-    <a class="completed-link" ui-sref="completedTask">Completed Task</a>
-    <a class="expired-link" ui-sref="expiredTask">Expired Task</a>
-    <div class="taskList">
-      <h3 class="current-task-title">Current Task</h3>
-      <div class= "the-task" ng-repeat="task in home.activeTask">
-        <div ng-hide="home.hideTask(task)">
-          <form ng-click="home.task.completeTask(task)">
-            <input class="the-checkbox" type="checkbox" ng-model="thisTask" />
-            {{task.name}} - {{task.priority}}
-          </form>
-        </div>
+  <div class="the-links">
+    <a ui-sref="home">Grocery List</a>
+    <a ui-sref="fridgeList">Fridge</a>
+    <a ui-sref="expiredList">Expired</a>
+  </div>
+
+  <h1>Grocery List</h1>
+  <div class="list-container">
+    <div class= "the-list" ng-repeat="item in home.activeList">
+      <div ng-hide= "item.editButtonClicked">
+        <input ng-click="home.list.completeItem(item)" class="the-checkbox" type="checkbox" />
+        {{item.name}}
+        <button class="edit-item-button" ng-click="home.beginEdit(item)" ng-model="editButton">Edit</button>
+        <button class="delete-item-button" ng-click="home.deleteItem(item)">Delete</button>
       </div>
-      <form class= "new-task-form" ng-submit="home.task.createNewTask(newTaskName, priorityOption)">
-        <input class="new-task-name" ng-model="newTaskName" type="text" placeholder="Enter a New Task"/>
-        <select class="priority-level-selector" ng-model="priorityOption">
-          <option value="" disabled selected>Select priority</option>
-          <option value="High!!!">High!!!</option>
-          <option value="Med!!">Med!!</option>
-          <option value="Low!">Low!</option>
-        </select>
-        <button class="new-task-submit" type="submit">Submit</button>
-      </form>
-    </div>
+    <form class= "edit-form" ng-show="item.editButtonClicked" ng-submit="home.list.editItemName(item, item.name)">
+      <input type="text" ng-model= "item.name" />
+    </form>
+  </div>
+    <form class= "new-item-form" ng-submit="home.createNewItem(home.newItemName)">
+      <input class="new-item-name" ng-model="home.newItemName" type="text" placeholder="Enter a New Item" autofocus/>
+      <button class="new-item-submit" type="submit">Submit</button>
+    </form>
   </div>
 </div>

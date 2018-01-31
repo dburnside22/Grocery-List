@@ -12,19 +12,19 @@
         controller: 'HomeCtrl as home',
         templateUrl: '/templates/home.html'
       })
-      .state('completedTask', {
-         url: '/completedTask' ,
-         controller: 'CompletedCtrl as completed',
-         templateUrl: '/templates/completedTask.html'
+      .state('fridgeList', {
+         url: '/fridgeList' ,
+         controller: 'FridgeCtrl as fridge',
+         templateUrl: '/templates/fridgeList.html'
       })
-      .state('expiredTask', {
-         url: '/expiredTask' ,
+      .state('expiredList', {
+         url: '/expiredList' ,
          controller: 'ExpiredCtrl as expired',
-         templateUrl: '/templates/expiredTask.html'
+         templateUrl: '/templates/expiredList.html'
       });;
   }
 
   angular
-    .module('todo', ['ui.router', 'firebase'])
+    .module('groceries', ['ui.router', 'firebase'])
     .config(config);
 })();

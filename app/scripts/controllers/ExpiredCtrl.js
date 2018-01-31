@@ -1,9 +1,13 @@
 (function(){
-  function ExpiredCtrl(Task) {
-    this.task = Task;
+  function ExpiredCtrl(List) {
+    this.list = List;
 
+    this.deleteItem = function(item){
+      this.list.deleteItem(item, "expiredList");
+    }
   }
+
   angular
-    .module('todo')
-    .controller('ExpiredCtrl', ['Task', ExpiredCtrl]);
+    .module('groceries')
+    .controller('ExpiredCtrl', ['List', ExpiredCtrl]);
 })();

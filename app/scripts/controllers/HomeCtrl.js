@@ -1,23 +1,23 @@
 (function(){
-  function HomeCtrl(Task) {
-    this.activeTask = Task.activeTask;
-    this.task = Task;
+  function HomeCtrl(List) {
+    this.activeList = List.activeList;
+    this.list = List;
 
-
-    this.hideTask = function(task){
-      var today = new Date();
-      var taskDate = new Date(task.createdAt);
-
-      if (today.getTime() > (taskDate.getTime()+ 6.048e+8)){
-        this.task.moveTask(task, "timedOut");
-      }else if (task.complete === true){
-        this.task.moveTask(task, "completedTask");
-      }
+    this.createNewItem = function(newItemName){
+      this.list.createNewItem(newItemName);
+      this.newItemName = '';
     }
 
+    this.beginEdit = function(item){
+      this.list.beginEdit(item, "activeList/");
+    }
+
+    this.deleteItem = function(item){
+      this.list.deleteItem(item, "activeList");
+    }
   }
 
   angular
-    .module('todo')
-    .controller('HomeCtrl', ['Task', HomeCtrl]);
+    .module('groceries')
+    .controller('HomeCtrl', ['List', HomeCtrl]);
 })();
