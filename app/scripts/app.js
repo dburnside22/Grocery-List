@@ -21,7 +21,7 @@
          url: '/expiredList' ,
          controller: 'ExpiredCtrl as expired',
          templateUrl: '/templates/expiredList.html'
-      });;
+      });
   }
 
   angular
